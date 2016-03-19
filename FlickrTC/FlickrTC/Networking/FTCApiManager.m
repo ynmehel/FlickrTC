@@ -8,10 +8,10 @@
 
 #import "FTCApiManager.h"
 #import <AFNetworking/AFNetworking.h>
+#import "FTCSearchResponse.h"
 
 static NSString * const kFTCApiBaseUrl = @"https://api.flickr.com/services/rest/";
-static NSString * const kFTCApiKeyFlickrApiKey = @"4b7a2099de35cc59935bddaafc6ee7be";
-static NSString * const kFTCApiKeyFlickrApiSig = @"f807d8f57a9c98199f2db6b975b8b3a8";
+static NSString * const kFTCApiKeyFlickrApiKey = @"d301b1a7c2e8db9e22b4bb8240fa151b";
 static NSString * const kFTCApiKeyMethod = @"?method=%@";
 static NSString * const kFTCApiKeyHttpParamKey = @"&api_key=%@";
 
@@ -35,7 +35,6 @@ static NSString * const kFTCApiKeyHttpParamKey = @"&api_key=%@";
         }
     }
     [urlString appendString:@"&format=json&nojsoncallback=1"];
-    [urlString appendFormat:@"&api_sig=%@", kFTCApiKeyFlickrApiSig];
     [urlString appendFormat:@"&page=%lu", (unsigned long)page];
     
     NSLog(@"FTCApiManager sending request: %@", urlString);
