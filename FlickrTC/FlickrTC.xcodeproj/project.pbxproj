@@ -10,7 +10,6 @@
 		121B51FB1C9D7F5300137262 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B51FA1C9D7F5300137262 /* main.m */; };
 		121B51FE1C9D7F5300137262 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B51FD1C9D7F5300137262 /* AppDelegate.m */; };
 		121B52011C9D7F5300137262 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B52001C9D7F5300137262 /* ViewController.m */; };
-		121B52041C9D7F5300137262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121B52021C9D7F5300137262 /* Main.storyboard */; };
 		121B52061C9D7F5400137262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 121B52051C9D7F5400137262 /* Assets.xcassets */; };
 		121B52091C9D7F5400137262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121B52071C9D7F5400137262 /* LaunchScreen.storyboard */; };
 		121B52141C9D7F5400137262 /* FlickrTCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B52131C9D7F5400137262 /* FlickrTCTests.m */; };
@@ -41,7 +40,6 @@
 		121B51FD1C9D7F5300137262 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		121B51FF1C9D7F5300137262 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		121B52001C9D7F5300137262 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		121B52031C9D7F5300137262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		121B52051C9D7F5400137262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		121B52081C9D7F5400137262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		121B520A1C9D7F5400137262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				121B51FD1C9D7F5300137262 /* AppDelegate.m */,
 				121B51FF1C9D7F5300137262 /* ViewController.h */,
 				121B52001C9D7F5300137262 /* ViewController.m */,
-				121B52021C9D7F5300137262 /* Main.storyboard */,
 				121B52051C9D7F5400137262 /* Assets.xcassets */,
 				121B52071C9D7F5400137262 /* LaunchScreen.storyboard */,
 				121B520A1C9D7F5400137262 /* Info.plist */,
@@ -245,7 +242,6 @@
 			files = (
 				121B52091C9D7F5400137262 /* LaunchScreen.storyboard in Resources */,
 				121B52061C9D7F5400137262 /* Assets.xcassets in Resources */,
-				121B52041C9D7F5300137262 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,14 +304,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		121B52021C9D7F5300137262 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				121B52031C9D7F5300137262 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		121B52071C9D7F5400137262 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -496,6 +484,7 @@
 				121B52251C9D7F5400137262 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		121B52261C9D7F5400137262 /* Build configuration list for PBXNativeTarget "FlickrTCTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +493,7 @@
 				121B52281C9D7F5400137262 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		121B52291C9D7F5400137262 /* Build configuration list for PBXNativeTarget "FlickrTCUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +502,7 @@
 				121B522B1C9D7F5400137262 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
