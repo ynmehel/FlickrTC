@@ -7,24 +7,29 @@
 //
 
 #import "ViewController.h"
-#import "FTCApiManager.h"
+#import "FTCFlow.h"
 
 @interface ViewController ()
 
+@property (strong, nonatomic) FTCFlow *flow;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-    [FTCApiManager testCall2];
-    // Do any additional setup after loading the view, typically from a nib.
+- (instancetype)init {
+    
+    self = [super init];
+    if (self) {
+        _flow = [[FTCFlow alloc] init];
+    }
+    return self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.flow fetchPartyPhotos];
 }
 
 @end

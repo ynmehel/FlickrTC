@@ -19,6 +19,8 @@
 		121FF5971C9DEC62000E698B /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FF5961C9DEC62000E698B /* AFNetworking.framework */; };
 		121FF5981C9DEC63000E698B /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FF5961C9DEC62000E698B /* AFNetworking.framework */; };
 		121FF59A1C9DEC8E000E698B /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 121FF5961C9DEC62000E698B /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		121FF59E1C9E0429000E698B /* FTCFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF59D1C9E0429000E698B /* FTCFlow.m */; };
+		121FF59F1C9E0429000E698B /* FTCFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF59D1C9E0429000E698B /* FTCFlow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		121FF58B1C9DE3F6000E698B /* FTCApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCApiManager.h; sourceTree = "<group>"; };
 		121FF58C1C9DE3F6000E698B /* FTCApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCApiManager.m; sourceTree = "<group>"; };
 		121FF5961C9DEC62000E698B /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
+		121FF59C1C9E0429000E698B /* FTCFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCFlow.h; sourceTree = "<group>"; };
+		121FF59D1C9E0429000E698B /* FTCFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCFlow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,8 @@
 			children = (
 				121FF58B1C9DE3F6000E698B /* FTCApiManager.h */,
 				121FF58C1C9DE3F6000E698B /* FTCApiManager.m */,
+				121FF59C1C9E0429000E698B /* FTCFlow.h */,
+				121FF59D1C9E0429000E698B /* FTCFlow.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121FF59E1C9E0429000E698B /* FTCFlow.m in Sources */,
 				121FF58D1C9DE3F6000E698B /* FTCApiManager.m in Sources */,
 				121B52011C9D7F5300137262 /* ViewController.m in Sources */,
 				121B51FE1C9D7F5300137262 /* AppDelegate.m in Sources */,
@@ -322,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				121FF58E1C9DE3F6000E698B /* FTCApiManager.m in Sources */,
+				121FF59F1C9E0429000E698B /* FTCFlow.m in Sources */,
 				121B52141C9D7F5400137262 /* FlickrTCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +465,7 @@
 					"$(PROJECT_DIR)/FlickrTC/Frameworks",
 				);
 				INFOPLIST_FILE = FlickrTC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynm.FlickrTC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,6 +482,7 @@
 					"$(PROJECT_DIR)/FlickrTC/Frameworks",
 				);
 				INFOPLIST_FILE = FlickrTC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynm.FlickrTC;
 				PRODUCT_NAME = "$(TARGET_NAME)";

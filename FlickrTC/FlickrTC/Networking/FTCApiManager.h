@@ -10,6 +10,7 @@
 
 @interface FTCApiManager : NSObject
 
++ (void)fetchMethod:(NSString *)method tags:(NSArray<NSString *> *)tags page:(NSUInteger)page;
 + (void)testCall;
 
 @end
