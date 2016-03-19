@@ -29,7 +29,9 @@
     
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    [self.flow fetchPartyPhotos];
+    [self.flow fetchPartyPhotosWithCompletion:^(FTCSearchResponse *response, NSError *error) {
+        
+    }];
 }
 
 @end

@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^FTCApiManagerCompletion)(NSDictionary *data, NSError *error);
+
 @interface FTCApiManager : NSObject
 
-+ (void)fetchMethod:(NSString *)method tags:(NSArray<NSString *> *)tags page:(NSUInteger)page;
++ (void)fetchMethod:(NSString *)method tags:(NSArray<NSString *> *)tags page:(NSUInteger)page completion:(FTCApiManagerCompletion)competion;
 + (void)testCall;
 
 @end

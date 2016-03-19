@@ -8,7 +8,6 @@
 
 #import "FTCApiManager.h"
 #import <AFNetworking/AFNetworking.h>
-#import "FTCSearchResponse.h"
 
 static NSString * const kFTCApiBaseUrl = @"https://api.flickr.com/services/rest/";
 static NSString * const kFTCApiKeyFlickrApiKey = @"d301b1a7c2e8db9e22b4bb8240fa151b";
@@ -17,7 +16,10 @@ static NSString * const kFTCApiKeyHttpParamKey = @"&api_key=%@";
 
 @implementation FTCApiManager
 
-+ (void)fetchMethod:(NSString *)method tags:(NSArray<NSString *> *)tags page:(NSUInteger)page
++ (void)fetchMethod:(NSString *)method
+               tags:(NSArray<NSString *> *)tags
+               page:(NSUInteger)page
+         completion:(FTCApiManagerCompletion)competion
 {
     NSMutableString *urlString = [kFTCApiBaseUrl mutableCopy];
     [urlString appendFormat:kFTCApiKeyMethod, method];
@@ -41,8 +43,18 @@ static NSString * const kFTCApiKeyHttpParamKey = @"&api_key=%@";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        
+        if (competion) {
+            
+            competion(responseObject, nil);
+        }
+        
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        if (competion) {
+            
+            competion(nil, error);
+        }
     }];
     
 }

@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FTCSearchResponse.h"
+
+typedef void(^FTCFlowFetchPartyCompletion)(FTCSearchResponse *response, NSError *error);
 
 @interface FTCFlow : NSObject
 
-- (void)fetchPartyPhotos;
+- (void)fetchPartyPhotosWithCompletion:(FTCFlowFetchPartyCompletion)completion;
 
 @end

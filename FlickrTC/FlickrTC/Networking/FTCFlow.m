@@ -14,9 +14,20 @@ static NSString * const kFTCApiTagParty = @"party";
 
 @implementation FTCFlow
 
-- (void)fetchPartyPhotos {
+- (void)fetchPartyPhotosWithCompletion:(FTCFlowFetchPartyCompletion)completion {
     
-    [FTCApiManager fetchMethod:kFTCApiMethodSearch tags:@[kFTCApiTagParty] page:1];
+    [FTCApiManager fetchMethod:kFTCApiMethodSearch tags:@[kFTCApiTagParty] page:1 completion:^(NSDictionary *data, NSError *error) {
+        
+        FTCSearchResponse *response;
+        if (error != nil) {
+            
+            response = [[FTCSearchResponse alloc] initWithDictionary:data];
+        }
+        if (completion) {
+            
+            completion(response, error);
+        }
+    }];
 }
 
 @end
