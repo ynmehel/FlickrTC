@@ -14,6 +14,11 @@
 		121B52091C9D7F5400137262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121B52071C9D7F5400137262 /* LaunchScreen.storyboard */; };
 		121B52141C9D7F5400137262 /* FlickrTCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B52131C9D7F5400137262 /* FlickrTCTests.m */; };
 		121B521F1C9D7F5400137262 /* FlickrTCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B521E1C9D7F5400137262 /* FlickrTCUITests.m */; };
+		121FF58D1C9DE3F6000E698B /* FTCApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF58C1C9DE3F6000E698B /* FTCApiManager.m */; };
+		121FF58E1C9DE3F6000E698B /* FTCApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF58C1C9DE3F6000E698B /* FTCApiManager.m */; };
+		121FF5971C9DEC62000E698B /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FF5961C9DEC62000E698B /* AFNetworking.framework */; };
+		121FF5981C9DEC63000E698B /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FF5961C9DEC62000E698B /* AFNetworking.framework */; };
+		121FF59A1C9DEC8E000E698B /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 121FF5961C9DEC62000E698B /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +38,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		121FF59B1C9DEC8E000E698B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				121FF59A1C9DEC8E000E698B /* AFNetworking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		121B51F61C9D7F5300137262 /* FlickrTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		121B51FA1C9D7F5300137262 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,6 +68,9 @@
 		121B521A1C9D7F5400137262 /* FlickrTCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrTCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		121B521E1C9D7F5400137262 /* FlickrTCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrTCUITests.m; sourceTree = "<group>"; };
 		121B52201C9D7F5400137262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		121FF58B1C9DE3F6000E698B /* FTCApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCApiManager.h; sourceTree = "<group>"; };
+		121FF58C1C9DE3F6000E698B /* FTCApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCApiManager.m; sourceTree = "<group>"; };
+		121FF5961C9DEC62000E698B /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121FF5971C9DEC62000E698B /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121FF5981C9DEC63000E698B /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +123,8 @@
 		121B51F81C9D7F5300137262 /* FlickrTC */ = {
 			isa = PBXGroup;
 			children = (
+				121B52311C9DE2DD00137262 /* Frameworks */,
+				121FF58A1C9DE3DE000E698B /* Networking */,
 				121B51FC1C9D7F5300137262 /* AppDelegate.h */,
 				121B51FD1C9D7F5300137262 /* AppDelegate.m */,
 				121B51FF1C9D7F5300137262 /* ViewController.h */,
@@ -137,6 +163,23 @@
 			path = FlickrTCUITests;
 			sourceTree = "<group>";
 		};
+		121B52311C9DE2DD00137262 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				121FF5961C9DEC62000E698B /* AFNetworking.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		121FF58A1C9DE3DE000E698B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				121FF58B1C9DE3F6000E698B /* FTCApiManager.h */,
+				121FF58C1C9DE3F6000E698B /* FTCApiManager.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +190,7 @@
 				121B51F21C9D7F5300137262 /* Sources */,
 				121B51F31C9D7F5300137262 /* Frameworks */,
 				121B51F41C9D7F5300137262 /* Resources */,
+				121FF59B1C9DEC8E000E698B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121FF58D1C9DE3F6000E698B /* FTCApiManager.m in Sources */,
 				121B52011C9D7F5300137262 /* ViewController.m in Sources */,
 				121B51FE1C9D7F5300137262 /* AppDelegate.m in Sources */,
 				121B51FB1C9D7F5300137262 /* main.m in Sources */,
@@ -276,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121FF58E1C9DE3F6000E698B /* FTCApiManager.m in Sources */,
 				121B52141C9D7F5400137262 /* FlickrTCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +364,7 @@
 		121B52211C9D7F5400137262 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -337,6 +383,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -351,7 +398,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS/**";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -361,7 +410,7 @@
 		121B52221C9D7F5400137262 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -380,6 +429,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -388,7 +438,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS/**";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -399,6 +451,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
+					"$(PROJECT_DIR)/FlickrTC/Frameworks",
+				);
 				INFOPLIST_FILE = FlickrTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynm.FlickrTC;
@@ -410,6 +467,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
+					"$(PROJECT_DIR)/FlickrTC/Frameworks",
+				);
 				INFOPLIST_FILE = FlickrTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynm.FlickrTC;
@@ -421,6 +483,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/FlickrTC/Frameworks",
+				);
 				INFOPLIST_FILE = FlickrTCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynm.FlickrTCTests;
@@ -433,6 +500,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/FlickrTC/Frameworks",
+				);
 				INFOPLIST_FILE = FlickrTCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynm.FlickrTCTests;

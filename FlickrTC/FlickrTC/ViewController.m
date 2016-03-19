@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FTCApiManager.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [FTCApiManager testCall2];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
