@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "FTCListViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    ViewController *rootViewController = [[ViewController alloc] init];
+    FTCListViewController *rootViewController = [[FTCListViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     
     self.window = [UIWindow new];

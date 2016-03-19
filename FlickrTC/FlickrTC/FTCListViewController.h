@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FTCListViewController.h
 //  FlickrTC
 //
 //  Created by Yunus Nedim Mehel on 19/03/2016.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface FTCListViewController : UIViewController
 
 
 @end
