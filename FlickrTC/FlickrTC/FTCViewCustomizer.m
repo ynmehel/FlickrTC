@@ -25,7 +25,13 @@
             label.numberOfLines = 3;
             break;
             
-        case FTCLabelStylePhotoDetail:
+        case FTCLabelStylePhotoDetailKey:
+            label.textColor = [UIColor colorWithRed:0 green:0.7 blue:0.9 alpha:1];
+            label.numberOfLines = 1;
+            break;
+            
+        case FTCLabelStylePhotoDetailValue:
+            label.textColor = [UIColor whiteColor];
             label.numberOfLines = 1;
             break;
             

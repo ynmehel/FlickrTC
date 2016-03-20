@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FTCKeyValuePair.h"
 
 @interface FTCPhoto : NSObject <NSCoding, NSCopying>
 
@@ -33,5 +34,6 @@
 - (NSDictionary *)dictionaryRepresentation;
 - (NSURL *)urlForThumbnail;
 - (NSURL *)urlForZSizedImage;
+- (NSArray<FTCKeyValuePair *> *)detailsToShow;
 
 @end

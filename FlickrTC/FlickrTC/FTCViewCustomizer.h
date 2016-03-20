@@ -11,9 +11,10 @@
 
 typedef NS_ENUM(NSInteger, FTCLabelStyle) {
     
-    FTCLabelStylePhotoDetail = 0,
-    FTCLabelStylePhotoDescription,
+    FTCLabelStylePhotoDescription = 0,
     FTCLabelStylePhotoTags,
+    FTCLabelStylePhotoDetailKey,
+    FTCLabelStylePhotoDetailValue
 };
 
 @interface FTCViewCustomizer : NSObject

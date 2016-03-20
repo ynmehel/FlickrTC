@@ -35,6 +35,8 @@
 		121FF5B81C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B61C9EF7CC000E698B /* UIView+FTCAdditions.m */; };
 		121FF5BF1C9EF96B000E698B /* FTCViewCustomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5BE1C9EF96B000E698B /* FTCViewCustomizer.m */; };
 		121FF5C01C9EF96B000E698B /* FTCViewCustomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5BE1C9EF96B000E698B /* FTCViewCustomizer.m */; };
+		121FF5C31C9EFD71000E698B /* FTCKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5C21C9EFD71000E698B /* FTCKeyValuePair.m */; };
+		121FF5C41C9EFD71000E698B /* FTCKeyValuePair.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5C21C9EFD71000E698B /* FTCKeyValuePair.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		121FF5B61C9EF7CC000E698B /* UIView+FTCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FTCAdditions.m"; sourceTree = "<group>"; };
 		121FF5BD1C9EF96B000E698B /* FTCViewCustomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCViewCustomizer.h; sourceTree = "<group>"; };
 		121FF5BE1C9EF96B000E698B /* FTCViewCustomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCViewCustomizer.m; sourceTree = "<group>"; };
+		121FF5C11C9EFD71000E698B /* FTCKeyValuePair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCKeyValuePair.h; sourceTree = "<group>"; };
+		121FF5C21C9EFD71000E698B /* FTCKeyValuePair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCKeyValuePair.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 				121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */,
 				121FF5AC1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.h */,
 				121FF5AD1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m */,
+				121FF5C11C9EFD71000E698B /* FTCKeyValuePair.h */,
+				121FF5C21C9EFD71000E698B /* FTCKeyValuePair.m */,
 				121B52051C9D7F5400137262 /* Assets.xcassets */,
 				121B52071C9D7F5400137262 /* LaunchScreen.storyboard */,
 				121B520A1C9D7F5400137262 /* Info.plist */,
@@ -370,6 +376,7 @@
 				121FF5A81C9E09DA000E698B /* FTCPhoto.m in Sources */,
 				121FF5B21C9EEB93000E698B /* FTCPhotoDetailViewController.m in Sources */,
 				121FF59E1C9E0429000E698B /* FTCFlow.m in Sources */,
+				121FF5C31C9EFD71000E698B /* FTCKeyValuePair.m in Sources */,
 				121FF58D1C9DE3F6000E698B /* FTCApiManager.m in Sources */,
 				121FF5A61C9E09DA000E698B /* FTCSearchResponse.m in Sources */,
 				121B52011C9D7F5300137262 /* FTCListViewController.m in Sources */,
@@ -394,6 +401,7 @@
 				121FF5A71C9E09DA000E698B /* FTCSearchResponse.m in Sources */,
 				121FF5B81C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */,
 				121B52141C9D7F5400137262 /* FlickrTCTests.m in Sources */,
+				121FF5C41C9EFD71000E698B /* FTCKeyValuePair.m in Sources */,
 				121FF5AF1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

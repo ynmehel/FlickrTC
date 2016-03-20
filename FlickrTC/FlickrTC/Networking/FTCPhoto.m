@@ -186,4 +186,11 @@ NSString *const kFTCPhotoTags = @"tags";
     return [NSURL URLWithString:self.url_z];
 }
 
+- (NSArray<FTCKeyValuePair *> *)detailsToShow {
+    
+    return @[[FTCKeyValuePair pairWithKey:NSLocalizedString(@"Title", nil) value:self.title],
+             [FTCKeyValuePair pairWithKey:NSLocalizedString(@"Owner", nil) value:self.ownerName],
+             [FTCKeyValuePair pairWithKey:NSLocalizedString(@"Date Taken", nil) value:self.dateTaken]];
+}
+
 @end

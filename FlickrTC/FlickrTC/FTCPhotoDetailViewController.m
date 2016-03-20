@@ -11,6 +11,7 @@
 #import "UIView+FTCAdditions.h"
 #import "FTCViewCustomizer.h"
 
+static NSString * const kFTCDetailReuseIdentifier = @"com.ftc.detailReuseID";
 static CGFloat const kIBMPhotoDetailImageHeight = 100.0;
 static CGFloat const kIBMPhotoDetailMultilineLabelHeight = 45.0;
 static CGFloat const kIBMPhotoDetailHorizontalOffset = 10.0;
@@ -69,21 +70,34 @@ static CGFloat const kIBMPhotoDetailHorizontalOffset = 10.0;
     
     //TableView
     [self.tableView setFrame:CGRectMake(0, [self.tagsLabel ftc_bottom], CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - [self.tagsLabel ftc_bottom])];
-//    [self.view addSubview:self.tableView];
-    
-    
+    self.tableView.backgroundColor = self.view.backgroundColor;
+    self.tableView.separatorColor = self.tableView.backgroundColor;
+    [self.view addSubview:self.tableView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-#warning missing implementation
-    return 0;
+    return self.flow.selectedPhoto.detailsToShow.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-#warning missing implementation
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kFTCDetailReuseIdentifier];
+    if (cell == nil) {
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:kFTCDetailReuseIdentifier];
+    }
+    cell.backgroundColor = self.tableView.backgroundColor;
+    [FTCViewCustomizer applyStyle:FTCLabelStylePhotoDetailKey onLabel:cell.textLabel];
+    [FTCViewCustomizer applyStyle:FTCLabelStylePhotoDetailValue onLabel:cell.detailTextLabel];
+    
+    if (indexPath.row < self.flow.selectedPhoto.detailsToShow.count) {
+        
+        FTCKeyValuePair *pair = self.flow.selectedPhoto.detailsToShow[indexPath.row];
+        cell.textLabel.text = pair.key;
+        cell.detailTextLabel.text = pair.value;
+    }
+    return cell;
 }
 
 #pragma mark - 
