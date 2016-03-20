@@ -11,4 +11,6 @@
 
 @interface FTCPhotoListingCollectionViewCell : UICollectionViewCell
 
+- (void)populateWithPhoto:(FTCPhoto *)photo;
+
 @end

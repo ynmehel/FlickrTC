@@ -42,12 +42,9 @@ static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
     self.collectionView.frame = self.view.bounds;
-    self.collectionView.frame = CGRectMake(20, 100, 300, 400);
-    
-    [self.collectionView setBackgroundColor:[UIColor purpleColor]];
-    
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.collectionView setBackgroundColor:self.view.backgroundColor];
     [self.flow fetchPartyPhotosWithCompletion:^(FTCSearchResponse *response, NSError *error) {
        
         [self.collectionView reloadData];
@@ -64,7 +61,10 @@ static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     FTCPhotoListingCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFTCListReuseIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor yellowColor];
+    if (indexPath.row < self.flow.photos.count) {
+        
+        [cell populateWithPhoto:self.flow.photos[indexPath.row]];
+    }
     return cell;
 }
 
@@ -75,7 +75,7 @@ static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(50, 50);
+    return CGSizeMake(150, 100);
 }
 
 @end

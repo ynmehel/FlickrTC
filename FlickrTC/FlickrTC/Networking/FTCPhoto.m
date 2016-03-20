@@ -16,6 +16,9 @@ NSString *const kFTCPhotoTitle = @"title";
 NSString *const kFTCPhotoIsfriend = @"isfriend";
 NSString *const kFTCPhotoIsfamily = @"isfamily";
 NSString *const kFTCPhotoIspublic = @"ispublic";
+NSString *const kFTCPhotoUrlM = @"url_m"; //See https://www.flickr.com/services/api/misc.urls.html for details
+NSString *const kFTCPhotoUrlT = @"url_t";
+NSString *const kFTCPhotoUrlZ = @"url_z";
 
 @interface FTCPhoto ()
 
@@ -54,6 +57,9 @@ NSString *const kFTCPhotoIspublic = @"ispublic";
             self.photoIdentifier = [self objectOrNilForKey:kFTCPhotoId fromDictionary:dict];
             self.server = [self objectOrNilForKey:kFTCPhotoServer fromDictionary:dict];
             self.title = [self objectOrNilForKey:kFTCPhotoTitle fromDictionary:dict];
+            self.url_m = [self objectOrNilForKey:kFTCPhotoUrlM fromDictionary:dict];
+            self.url_t = [self objectOrNilForKey:kFTCPhotoUrlT fromDictionary:dict];
+            self.url_z = [self objectOrNilForKey:kFTCPhotoUrlZ fromDictionary:dict];
             self.isfriend = [[self objectOrNilForKey:kFTCPhotoIsfriend fromDictionary:dict] doubleValue];
             self.isfamily = [[self objectOrNilForKey:kFTCPhotoIsfamily fromDictionary:dict] doubleValue];
             self.ispublic = [[self objectOrNilForKey:kFTCPhotoIspublic fromDictionary:dict] doubleValue];
@@ -73,6 +79,9 @@ NSString *const kFTCPhotoIspublic = @"ispublic";
     [mutableDict setValue:self.photoIdentifier forKey:kFTCPhotoId];
     [mutableDict setValue:self.server forKey:kFTCPhotoServer];
     [mutableDict setValue:self.title forKey:kFTCPhotoTitle];
+    [mutableDict setValue:self.url_m forKey:kFTCPhotoUrlM];
+    [mutableDict setValue:self.url_t forKey:kFTCPhotoUrlT];
+    [mutableDict setValue:self.url_z forKey:kFTCPhotoUrlZ];
     [mutableDict setValue:[NSNumber numberWithDouble:self.isfriend] forKey:kFTCPhotoIsfriend];
     [mutableDict setValue:[NSNumber numberWithDouble:self.isfamily] forKey:kFTCPhotoIsfamily];
     [mutableDict setValue:[NSNumber numberWithDouble:self.ispublic] forKey:kFTCPhotoIspublic];

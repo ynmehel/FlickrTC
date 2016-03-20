@@ -15,6 +15,9 @@
 @property (nonatomic, strong) NSString *photoIdentifier;
 @property (nonatomic, strong) NSString *server;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *url_m;
+@property (nonatomic, strong) NSString *url_t;
+@property (nonatomic, strong) NSString *url_z;
 @property (nonatomic, assign) double isfriend;
 @property (nonatomic, assign) double isfamily;
 @property (nonatomic, assign) double ispublic;

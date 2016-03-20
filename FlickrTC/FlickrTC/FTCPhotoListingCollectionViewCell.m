@@ -7,6 +7,7 @@
 //
 
 #import "FTCPhotoListingCollectionViewCell.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface FTCPhotoListingCollectionViewCell()
 
@@ -16,9 +17,9 @@
 
 @implementation FTCPhotoListingCollectionViewCell
 
-- (instancetype)init {
+- (instancetype)initWithFrame:(CGRect)frame {
     
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
         
         _imageView = [[UIImageView alloc] initWithFrame:self.frame];
@@ -28,6 +29,14 @@
 
 - (void)populateWithPhoto:(FTCPhoto *)photo {
  
+    if (photo.url_t) {
+        
+        self.imageView.frame = self.contentView.bounds;
+        [self.contentView addSubview:self.imageView];
+        
+        NSURL *url = [NSURL URLWithString:photo.url_t];
+        [self.imageView setImageWithURL:url placeholderImage:nil];
+    }
 }
 
 - (void)didMoveToSuperview {
