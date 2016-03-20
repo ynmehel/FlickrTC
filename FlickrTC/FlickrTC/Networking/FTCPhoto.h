@@ -18,6 +18,12 @@
 @property (nonatomic, strong) NSString *url_m;
 @property (nonatomic, strong) NSString *url_t;
 @property (nonatomic, strong) NSString *url_z;
+@property (nonatomic, strong) NSString *photoDescription;
+@property (nonatomic, strong) NSString *uploadDate;
+@property (nonatomic, strong) NSString *dateTaken;
+@property (nonatomic, strong) NSString *ownerName;
+@property (nonatomic, strong) NSString *lastUpdate;
+@property (nonatomic, strong) NSString *tags;
 @property (nonatomic, assign) double isfriend;
 @property (nonatomic, assign) double isfamily;
 @property (nonatomic, assign) double ispublic;

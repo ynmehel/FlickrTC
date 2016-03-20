@@ -39,7 +39,7 @@ static NSString * const kFTCApiMethodPhotoInfo = @"flickr.photos.getInfo";
         }
     }
     [urlString appendString:@"&format=json&nojsoncallback=1"];
-    [urlString appendString:@"&extras=url_t%2C+url_z"];
+    [urlString appendString:@"&extras=url_t%2C+url_z%2C+description%2C+date_upload%2C+date_taken%2C+owner_name%2C+last_update%2C+tags"];
     [urlString appendFormat:@"&page=%lu", (unsigned long)page];
     
     NSLog(@"FTCApiManager sending request: %@", urlString);

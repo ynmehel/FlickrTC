@@ -19,6 +19,13 @@ NSString *const kFTCPhotoIspublic = @"ispublic";
 NSString *const kFTCPhotoUrlM = @"url_m"; //See https://www.flickr.com/services/api/misc.urls.html for details
 NSString *const kFTCPhotoUrlT = @"url_t";
 NSString *const kFTCPhotoUrlZ = @"url_z";
+NSString *const kFTCPhotoDescription = @"description";
+NSString *const kFTCPhotoDescriptionContent = @"_content";
+NSString *const kFTCPhotoUploadDate = @"dateupload";
+NSString *const kFTCPhotoDateTaken = @"datetaken";
+NSString *const kFTCPhotoOwnerName = @"ownername";
+NSString *const kFTCPhotoLastUpdate = @"lastupdate";
+NSString *const kFTCPhotoTags = @"tags";
 
 @interface FTCPhoto ()
 
@@ -50,24 +57,31 @@ NSString *const kFTCPhotoUrlZ = @"url_z";
     
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
-    if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.secret = [self objectOrNilForKey:kFTCPhotoSecret fromDictionary:dict];
-            self.owner = [self objectOrNilForKey:kFTCPhotoOwner fromDictionary:dict];
-            self.farm = [[self objectOrNilForKey:kFTCPhotoFarm fromDictionary:dict] doubleValue];
-            self.photoIdentifier = [self objectOrNilForKey:kFTCPhotoId fromDictionary:dict];
-            self.server = [self objectOrNilForKey:kFTCPhotoServer fromDictionary:dict];
-            self.title = [self objectOrNilForKey:kFTCPhotoTitle fromDictionary:dict];
-            self.url_m = [self objectOrNilForKey:kFTCPhotoUrlM fromDictionary:dict];
-            self.url_t = [self objectOrNilForKey:kFTCPhotoUrlT fromDictionary:dict];
-            self.url_z = [self objectOrNilForKey:kFTCPhotoUrlZ fromDictionary:dict];
-            self.isfriend = [[self objectOrNilForKey:kFTCPhotoIsfriend fromDictionary:dict] doubleValue];
-            self.isfamily = [[self objectOrNilForKey:kFTCPhotoIsfamily fromDictionary:dict] doubleValue];
-            self.ispublic = [[self objectOrNilForKey:kFTCPhotoIspublic fromDictionary:dict] doubleValue];
-
+    if (self && [dict isKindOfClass:[NSDictionary class]])
+    {
+        self.secret = [self objectOrNilForKey:kFTCPhotoSecret fromDictionary:dict];
+        self.owner = [self objectOrNilForKey:kFTCPhotoOwner fromDictionary:dict];
+        self.farm = [[self objectOrNilForKey:kFTCPhotoFarm fromDictionary:dict] doubleValue];
+        self.photoIdentifier = [self objectOrNilForKey:kFTCPhotoId fromDictionary:dict];
+        self.server = [self objectOrNilForKey:kFTCPhotoServer fromDictionary:dict];
+        self.title = [self objectOrNilForKey:kFTCPhotoTitle fromDictionary:dict];
+        self.url_m = [self objectOrNilForKey:kFTCPhotoUrlM fromDictionary:dict];
+        self.url_t = [self objectOrNilForKey:kFTCPhotoUrlT fromDictionary:dict];
+        self.url_z = [self objectOrNilForKey:kFTCPhotoUrlZ fromDictionary:dict];
+        self.isfriend = [[self objectOrNilForKey:kFTCPhotoIsfriend fromDictionary:dict] doubleValue];
+        self.isfamily = [[self objectOrNilForKey:kFTCPhotoIsfamily fromDictionary:dict] doubleValue];
+        self.ispublic = [[self objectOrNilForKey:kFTCPhotoIspublic fromDictionary:dict] doubleValue];
+        
+        self.ownerName = [self objectOrNilForKey:kFTCPhotoOwnerName fromDictionary:dict];
+        self.dateTaken = [self objectOrNilForKey:kFTCPhotoDateTaken fromDictionary:dict];
+        self.uploadDate = [self objectOrNilForKey:kFTCPhotoUploadDate fromDictionary:dict];
+        self.lastUpdate = [self objectOrNilForKey:kFTCPhotoLastUpdate fromDictionary:dict];
+        self.tags = [self objectOrNilForKey:kFTCPhotoTags fromDictionary:dict];
+        NSDictionary *descriptionDict = [self objectOrNilForKey:kFTCPhotoDescription fromDictionary:dict];
+        self.photoDescription = [self objectOrNilForKey:kFTCPhotoDescriptionContent fromDictionary:descriptionDict];
     }
     
     return self;
-    
 }
 
 - (NSDictionary *)dictionaryRepresentation
@@ -82,6 +96,12 @@ NSString *const kFTCPhotoUrlZ = @"url_z";
     [mutableDict setValue:self.url_m forKey:kFTCPhotoUrlM];
     [mutableDict setValue:self.url_t forKey:kFTCPhotoUrlT];
     [mutableDict setValue:self.url_z forKey:kFTCPhotoUrlZ];
+    [mutableDict setValue:self.tags forKey:kFTCPhotoTags];
+    [mutableDict setValue:self.ownerName forKey:kFTCPhotoOwnerName];
+    [mutableDict setValue:self.dateTaken forKey:kFTCPhotoDateTaken];
+    [mutableDict setValue:self.lastUpdate forKey:kFTCPhotoLastUpdate];
+    [mutableDict setValue:self.uploadDate forKey:kFTCPhotoUploadDate];
+    
     [mutableDict setValue:[NSNumber numberWithDouble:self.isfriend] forKey:kFTCPhotoIsfriend];
     [mutableDict setValue:[NSNumber numberWithDouble:self.isfamily] forKey:kFTCPhotoIsfamily];
     [mutableDict setValue:[NSNumber numberWithDouble:self.ispublic] forKey:kFTCPhotoIspublic];
