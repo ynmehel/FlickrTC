@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "FTCSearchResponse.h"
+#import "FTCPhoto.h"
+#import "FTCPhotos.h"
 
 typedef void(^FTCFlowFetchPartyCompletion)(FTCSearchResponse *response, NSError *error);
 
 @interface FTCFlow : NSObject
+
+@property (strong, nonatomic, readonly) NSMutableArray<FTCPhoto *> *photos;
 
 - (void)fetchPartyPhotosWithCompletion:(FTCFlowFetchPartyCompletion)completion;
 
