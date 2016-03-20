@@ -31,6 +31,8 @@
 		121FF5AF1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5AD1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m */; };
 		121FF5B21C9EEB93000E698B /* FTCPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */; };
 		121FF5B31C9EEB93000E698B /* FTCPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */; };
+		121FF5B71C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B61C9EF7CC000E698B /* UIView+FTCAdditions.m */; };
+		121FF5B81C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B61C9EF7CC000E698B /* UIView+FTCAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		121FF5AD1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCPhotoListingCollectionViewCell.m; sourceTree = "<group>"; };
 		121FF5B01C9EEB93000E698B /* FTCPhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCPhotoDetailViewController.h; sourceTree = "<group>"; };
 		121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCPhotoDetailViewController.m; sourceTree = "<group>"; };
+		121FF5B51C9EF7CC000E698B /* UIView+FTCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FTCAdditions.h"; sourceTree = "<group>"; };
+		121FF5B61C9EF7CC000E698B /* UIView+FTCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FTCAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 		121B51F81C9D7F5300137262 /* FlickrTC */ = {
 			isa = PBXGroup;
 			children = (
+				121FF5B41C9EF7A6000E698B /* Categories */,
 				121B52311C9DE2DD00137262 /* Frameworks */,
 				121FF58A1C9DE3DE000E698B /* Networking */,
 				121B51FC1C9D7F5300137262 /* AppDelegate.h */,
@@ -214,6 +219,15 @@
 				121FF59D1C9E0429000E698B /* FTCFlow.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		121FF5B41C9EF7A6000E698B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				121FF5B51C9EF7CC000E698B /* UIView+FTCAdditions.h */,
+				121FF5B61C9EF7CC000E698B /* UIView+FTCAdditions.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +369,7 @@
 				121B52011C9D7F5300137262 /* FTCListViewController.m in Sources */,
 				121FF5AE1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m in Sources */,
 				121B51FE1C9D7F5300137262 /* AppDelegate.m in Sources */,
+				121FF5B71C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */,
 				121B51FB1C9D7F5300137262 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +384,7 @@
 				121FF5AB1C9E09DA000E698B /* FTCPhotos.m in Sources */,
 				121FF5A91C9E09DA000E698B /* FTCPhoto.m in Sources */,
 				121FF5A71C9E09DA000E698B /* FTCSearchResponse.m in Sources */,
+				121FF5B81C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */,
 				121B52141C9D7F5400137262 /* FlickrTCTests.m in Sources */,
 				121FF5AF1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m in Sources */,
 			);
