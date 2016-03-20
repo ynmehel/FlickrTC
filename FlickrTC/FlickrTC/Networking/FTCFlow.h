@@ -16,6 +16,7 @@ typedef void(^FTCFlowFetchPartyCompletion)(FTCSearchResponse *response, NSError 
 @interface FTCFlow : NSObject
 
 @property (strong, nonatomic, readonly) NSMutableArray<FTCPhoto *> *photos;
+@property (strong, nonatomic) FTCPhoto *selectedPhoto;
 
 - (void)fetchPartyPhotosWithCompletion:(FTCFlowFetchPartyCompletion)completion;
 

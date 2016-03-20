@@ -25,5 +25,7 @@
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)dictionaryRepresentation;
+- (NSURL *)urlForThumbnail;
+- (NSURL *)urlForZSizedImage;
 
 @end

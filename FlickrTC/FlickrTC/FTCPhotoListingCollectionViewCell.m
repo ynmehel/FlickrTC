@@ -34,8 +34,7 @@
         self.imageView.frame = self.contentView.bounds;
         [self.contentView addSubview:self.imageView];
         
-        NSURL *url = [NSURL URLWithString:photo.url_t];
-        [self.imageView setImageWithURL:url placeholderImage:nil];
+        [self.imageView setImageWithURL:photo.urlForThumbnail placeholderImage:nil];
     }
 }
 

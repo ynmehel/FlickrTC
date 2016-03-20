@@ -9,6 +9,7 @@
 #import "FTCListViewController.h"
 #import "FTCFlow.h"
 #import "FTCPhotoListingCollectionViewCell.h"
+#import "FTCPhotoDetailViewController.h"
 
 static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
 
@@ -76,6 +77,16 @@ static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(150, 100);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row < self.flow.photos.count)  {
+        
+        self.flow.selectedPhoto = self.flow.photos[indexPath.row];
+        [self.navigationController pushViewController:[[FTCPhotoDetailViewController alloc] initWithFlow:self.flow]
+                                             animated:YES];
+    }
 }
 
 @end

@@ -29,6 +29,8 @@
 		121FF5AB1C9E09DA000E698B /* FTCPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5A51C9E09DA000E698B /* FTCPhotos.m */; };
 		121FF5AE1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5AD1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m */; };
 		121FF5AF1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5AD1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m */; };
+		121FF5B21C9EEB93000E698B /* FTCPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */; };
+		121FF5B31C9EEB93000E698B /* FTCPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		121FF5A51C9E09DA000E698B /* FTCPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCPhotos.m; sourceTree = "<group>"; };
 		121FF5AC1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCPhotoListingCollectionViewCell.h; sourceTree = "<group>"; };
 		121FF5AD1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCPhotoListingCollectionViewCell.m; sourceTree = "<group>"; };
+		121FF5B01C9EEB93000E698B /* FTCPhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCPhotoDetailViewController.h; sourceTree = "<group>"; };
+		121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCPhotoDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,8 @@
 				121B51FD1C9D7F5300137262 /* AppDelegate.m */,
 				121B51FF1C9D7F5300137262 /* FTCListViewController.h */,
 				121B52001C9D7F5300137262 /* FTCListViewController.m */,
+				121FF5B01C9EEB93000E698B /* FTCPhotoDetailViewController.h */,
+				121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */,
 				121FF5AC1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.h */,
 				121FF5AD1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m */,
 				121B52051C9D7F5400137262 /* Assets.xcassets */,
@@ -342,6 +348,7 @@
 			files = (
 				121FF5AA1C9E09DA000E698B /* FTCPhotos.m in Sources */,
 				121FF5A81C9E09DA000E698B /* FTCPhoto.m in Sources */,
+				121FF5B21C9EEB93000E698B /* FTCPhotoDetailViewController.m in Sources */,
 				121FF59E1C9E0429000E698B /* FTCFlow.m in Sources */,
 				121FF58D1C9DE3F6000E698B /* FTCApiManager.m in Sources */,
 				121FF5A61C9E09DA000E698B /* FTCSearchResponse.m in Sources */,
@@ -358,6 +365,7 @@
 			files = (
 				121FF58E1C9DE3F6000E698B /* FTCApiManager.m in Sources */,
 				121FF59F1C9E0429000E698B /* FTCFlow.m in Sources */,
+				121FF5B31C9EEB93000E698B /* FTCPhotoDetailViewController.m in Sources */,
 				121FF5AB1C9E09DA000E698B /* FTCPhotos.m in Sources */,
 				121FF5A91C9E09DA000E698B /* FTCPhoto.m in Sources */,
 				121FF5A71C9E09DA000E698B /* FTCSearchResponse.m in Sources */,

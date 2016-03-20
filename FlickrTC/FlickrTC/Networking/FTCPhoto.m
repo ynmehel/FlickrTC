@@ -154,5 +154,16 @@ NSString *const kFTCPhotoUrlZ = @"url_z";
     return copy;
 }
 
+#pragma mark - 
+
+- (NSURL *)urlForThumbnail {
+    
+    return [NSURL URLWithString:self.url_t];
+}
+
+- (NSURL *)urlForZSizedImage {
+    
+    return [NSURL URLWithString:self.url_z];
+}
 
 @end
