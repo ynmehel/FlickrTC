@@ -33,6 +33,8 @@
 		121FF5B31C9EEB93000E698B /* FTCPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */; };
 		121FF5B71C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B61C9EF7CC000E698B /* UIView+FTCAdditions.m */; };
 		121FF5B81C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5B61C9EF7CC000E698B /* UIView+FTCAdditions.m */; };
+		121FF5BF1C9EF96B000E698B /* FTCViewCustomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5BE1C9EF96B000E698B /* FTCViewCustomizer.m */; };
+		121FF5C01C9EF96B000E698B /* FTCViewCustomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FF5BE1C9EF96B000E698B /* FTCViewCustomizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		121FF5B11C9EEB93000E698B /* FTCPhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCPhotoDetailViewController.m; sourceTree = "<group>"; };
 		121FF5B51C9EF7CC000E698B /* UIView+FTCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FTCAdditions.h"; sourceTree = "<group>"; };
 		121FF5B61C9EF7CC000E698B /* UIView+FTCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FTCAdditions.m"; sourceTree = "<group>"; };
+		121FF5BD1C9EF96B000E698B /* FTCViewCustomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCViewCustomizer.h; sourceTree = "<group>"; };
+		121FF5BE1C9EF96B000E698B /* FTCViewCustomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCViewCustomizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 				121FF58A1C9DE3DE000E698B /* Networking */,
 				121B51FC1C9D7F5300137262 /* AppDelegate.h */,
 				121B51FD1C9D7F5300137262 /* AppDelegate.m */,
+				121FF5BD1C9EF96B000E698B /* FTCViewCustomizer.h */,
+				121FF5BE1C9EF96B000E698B /* FTCViewCustomizer.m */,
 				121B51FF1C9D7F5300137262 /* FTCListViewController.h */,
 				121B52001C9D7F5300137262 /* FTCListViewController.m */,
 				121FF5B01C9EEB93000E698B /* FTCPhotoDetailViewController.h */,
@@ -369,6 +375,7 @@
 				121B52011C9D7F5300137262 /* FTCListViewController.m in Sources */,
 				121FF5AE1C9E1B7E000E698B /* FTCPhotoListingCollectionViewCell.m in Sources */,
 				121B51FE1C9D7F5300137262 /* AppDelegate.m in Sources */,
+				121FF5BF1C9EF96B000E698B /* FTCViewCustomizer.m in Sources */,
 				121FF5B71C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */,
 				121B51FB1C9D7F5300137262 /* main.m in Sources */,
 			);
@@ -382,6 +389,7 @@
 				121FF59F1C9E0429000E698B /* FTCFlow.m in Sources */,
 				121FF5B31C9EEB93000E698B /* FTCPhotoDetailViewController.m in Sources */,
 				121FF5AB1C9E09DA000E698B /* FTCPhotos.m in Sources */,
+				121FF5C01C9EF96B000E698B /* FTCViewCustomizer.m in Sources */,
 				121FF5A91C9E09DA000E698B /* FTCPhoto.m in Sources */,
 				121FF5A71C9E09DA000E698B /* FTCSearchResponse.m in Sources */,
 				121FF5B81C9EF7CC000E698B /* UIView+FTCAdditions.m in Sources */,
