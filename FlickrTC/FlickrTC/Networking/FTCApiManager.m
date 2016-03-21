@@ -14,6 +14,16 @@ static NSString * const kFTCApiKeyFlickrApiKey = @"bd0dc1bd9eae34fd28a4772e071cd
 static NSString * const kFTCApiKeyMethod = @"?method=%@";
 static NSString * const kFTCApiKeyHttpParamKey = @"&api_key=%@";
 static NSString * const kFTCApiMethodPhotoInfo = @"flickr.photos.getInfo";
+static NSString * const kFTCApiRequestFormat = @"&format=json&nojsoncallback=1";
+static NSString * const kFTCApiRequestExtras = @"&extras=url_t%2C+url_z%2C+description%2C+date_upload%2C+date_taken%2C+owner_name%2C+last_update%2C+tags";
+static NSString * const kFTCApiRequestParamTags = @"&tags=";
+static NSString * const kFTCApiRequestParamPage = @"&page=%lu";
+
+static NSString * const kFTCApiResponseStatusKey = @"stat";
+static NSString * const kFTCApiResponseStatusOK = @"ok";
+static NSString * const kFTCApiResponseStatusMessage = @"message";
+static NSString * const kFTCApiResponseStatusCode = @"code";
+static NSString * const kFTCApiResponseErrorDomain = @"com.ynm.ftc";
 
 
 @implementation FTCApiManager
@@ -28,7 +38,7 @@ static NSString * const kFTCApiMethodPhotoInfo = @"flickr.photos.getInfo";
     [urlString appendFormat:kFTCApiKeyHttpParamKey, kFTCApiKeyFlickrApiKey];
     if (tags.count > 0) {
         
-        [urlString appendString:@"&tags="];
+        [urlString appendString:kFTCApiRequestParamTags];
         [urlString appendString:tags.firstObject];
         
         for (int i = 1; i < tags.count; i ++) {
@@ -38,9 +48,9 @@ static NSString * const kFTCApiMethodPhotoInfo = @"flickr.photos.getInfo";
             
         }
     }
-    [urlString appendString:@"&format=json&nojsoncallback=1"];
-    [urlString appendString:@"&extras=url_t%2C+url_z%2C+description%2C+date_upload%2C+date_taken%2C+owner_name%2C+last_update%2C+tags"];
-    [urlString appendFormat:@"&page=%lu", (unsigned long)page];
+    [urlString appendString:kFTCApiRequestFormat];
+    [urlString appendString:kFTCApiRequestExtras];
+    [urlString appendFormat:kFTCApiRequestParamPage, (unsigned long)page];
     
     NSLog(@"FTCApiManager sending request: %@", urlString);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -62,25 +72,15 @@ static NSString * const kFTCApiMethodPhotoInfo = @"flickr.photos.getInfo";
     
 }
 
-+ (void)testCall {
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4b7a2099de35cc59935bddaafc6ee7be&tags=party&format=json&nojsoncallback=1&api_sig=f807d8f57a9c98199f2db6b975b8b3a8" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
-
 + (NSError *)errorWithResponseDictionary:(NSDictionary *)dictionary {
     
     NSError *error;
-    if (![[dictionary objectForKey:@"stat"] isEqualToString:@"ok"]) {
+    if (![[dictionary objectForKey:kFTCApiResponseStatusKey] isEqualToString:kFTCApiResponseStatusOK]) {
         
-        NSString *errMsg = [dictionary objectForKey:@"message"] ?: NSLocalizedString(@"", nil);
-        NSInteger errCode = [[dictionary objectForKey:@"code"] integerValue];
+        NSString *errMsg = [dictionary objectForKey:kFTCApiResponseStatusMessage] ?: NSLocalizedString(@"", nil);
+        NSInteger errCode = [[dictionary objectForKey:kFTCApiResponseStatusCode] integerValue];
         
-        error = [NSError errorWithDomain:@"com.ynm.ftc"
+        error = [NSError errorWithDomain:kFTCApiResponseErrorDomain
                                     code:errCode
                                 userInfo:@{NSLocalizedDescriptionKey:errMsg}];
     }

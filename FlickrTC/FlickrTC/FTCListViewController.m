@@ -41,6 +41,7 @@ static CGFloat const kFTCListImageHorizontalOffset = 8.0;
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     [self.view addSubview:self.collectionView];
     [self.view setBackgroundColor:[UIColor blackColor]];
+    self.title = NSLocalizedString(@"Party", nil);
     
     [self.collectionView registerClass:[FTCPhotoListingCollectionViewCell class] forCellWithReuseIdentifier:kFTCListReuseIdentifier];
     [self.collectionView setDataSource:self];

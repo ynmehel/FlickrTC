@@ -17,6 +17,4 @@ typedef void (^FTCApiManagerCompletion)(NSDictionary *data, NSError *error);
                page:(NSUInteger)page
          completion:(FTCApiManagerCompletion)competion;
 
-+ (void)testCall;
-
 @end
