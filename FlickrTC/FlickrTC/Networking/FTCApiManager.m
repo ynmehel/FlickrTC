@@ -10,7 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 static NSString * const kFTCApiBaseUrl = @"https://api.flickr.com/services/rest/";
-static NSString * const kFTCApiKeyFlickrApiKey = @"74b3c29fd1071151559fc39aba3bb04c";
+static NSString * const kFTCApiKeyFlickrApiKey = @"44545d531e1563cac55b7d9ef330e4ae";
 static NSString * const kFTCApiKeyMethod = @"?method=%@";
 static NSString * const kFTCApiKeyHttpParamKey = @"&api_key=%@";
 static NSString * const kFTCApiMethodPhotoInfo = @"flickr.photos.getInfo";
@@ -46,10 +46,10 @@ static NSString * const kFTCApiMethodPhotoInfo = @"flickr.photos.getInfo";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        
+    
         if (competion) {
             
-            competion(responseObject, nil);
+            competion(responseObject, [FTCApiManager errorWithResponseDictionary:responseObject]);
         }
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
@@ -71,4 +71,21 @@ static NSString * const kFTCApiMethodPhotoInfo = @"flickr.photos.getInfo";
         NSLog(@"Error: %@", error);
     }];
 }
+
++ (NSError *)errorWithResponseDictionary:(NSDictionary *)dictionary {
+    
+    NSError *error;
+    if (![[dictionary objectForKey:@"stat"] isEqualToString:@"ok"]) {
+        
+        NSString *errMsg = [dictionary objectForKey:@"message"] ?: NSLocalizedString(@"", nil);
+        NSInteger errCode = [[dictionary objectForKey:@"code"] integerValue];
+        
+        error = [NSError errorWithDomain:@"com.ynm.ftc"
+                                    code:errCode
+                                userInfo:@{NSLocalizedDescriptionKey:errMsg}];
+    }
+    
+    return error;
+}
+
 @end

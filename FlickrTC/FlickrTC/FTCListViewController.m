@@ -48,6 +48,12 @@ static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
     [self.collectionView setBackgroundColor:self.view.backgroundColor];
     [self.flow fetchPartyPhotosWithCompletion:^(FTCSearchResponse *response, NSError *error) {
        
+        if (error) {
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:error.localizedDescription delegate:self cancelButtonTitle:NSLocalizedString(@"Ok", nil) otherButtonTitles:nil];
+            [alert show];
+            
+        }
         [self.collectionView reloadData];
     }];
 }
