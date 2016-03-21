@@ -12,5 +12,6 @@
 
 - (CGFloat)ftc_bottom;
 - (CGFloat)ftc_width;
+- (CGFloat)ftc_height;
 
 @end

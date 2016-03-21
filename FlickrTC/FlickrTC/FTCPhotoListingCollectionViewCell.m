@@ -8,6 +8,9 @@
 
 #import "FTCPhotoListingCollectionViewCell.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "UIView+FTCAdditions.h"
+
+static CGFloat const kFTCPhotoListingImageOffset = 3.0;
 
 @interface FTCPhotoListingCollectionViewCell()
 
@@ -31,9 +34,10 @@
  
     if (photo.url_t) {
         
-        self.imageView.frame = self.contentView.bounds;
+        [self.imageView setClipsToBounds:YES];
+        self.imageView.frame = CGRectMake(kFTCPhotoListingImageOffset, kFTCPhotoListingImageOffset, [self.contentView ftc_width] - 2 * kFTCPhotoListingImageOffset, [self.contentView ftc_height] - 2 * kFTCPhotoListingImageOffset);
         [self.contentView addSubview:self.imageView];
-        
+        [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
         [self.imageView setImageWithURL:photo.urlForThumbnail placeholderImage:nil];
     }
 }

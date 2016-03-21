@@ -12,7 +12,9 @@
 #import "FTCViewCustomizer.h"
 
 static NSString * const kFTCDetailReuseIdentifier = @"com.ftc.detailReuseID";
-static CGFloat const kIBMPhotoDetailImageHeight = 100.0;
+
+static CGFloat const kIBMPhotoDetailImageOffset = 40.0;
+static CGFloat const kIBMPhotoDetailImageHeight = 200.0;
 static CGFloat const kIBMPhotoDetailMultilineLabelHeight = 45.0;
 static CGFloat const kIBMPhotoDetailHorizontalOffset = 10.0;
 
@@ -47,12 +49,12 @@ static CGFloat const kIBMPhotoDetailHorizontalOffset = 10.0;
     
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor blackColor]];
-    
-    self.tableView.dataSource = self;
-    self.tableView.allowsSelection = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.title = self.flow.selectedPhoto.title;
     
     // Image View
-    [self.imageView setFrame:CGRectMake(kIBMPhotoDetailHorizontalOffset, 0, [self widthExcludingOffsets], kIBMPhotoDetailImageHeight)];
+    [self.imageView setFrame:CGRectMake(kIBMPhotoDetailHorizontalOffset, kIBMPhotoDetailImageOffset, [self widthExcludingOffsets], kIBMPhotoDetailImageHeight)];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.imageView setImageWithURL:self.flow.selectedPhoto.urlForZSizedImage placeholderImage:nil];
     [self.view addSubview:self.imageView];
     
@@ -60,6 +62,7 @@ static CGFloat const kIBMPhotoDetailHorizontalOffset = 10.0;
     self.descriptionLabel.frame = CGRectMake(kIBMPhotoDetailHorizontalOffset, [self.imageView ftc_bottom], [self widthExcludingOffsets], kIBMPhotoDetailMultilineLabelHeight);
     [FTCViewCustomizer applyStyle:FTCLabelStylePhotoDescription onLabel:self.descriptionLabel];
     [self.descriptionLabel setText:self.flow.selectedPhoto.photoDescription];
+    [self.descriptionLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:self.descriptionLabel];
     
     // Tags
@@ -69,6 +72,8 @@ static CGFloat const kIBMPhotoDetailHorizontalOffset = 10.0;
     [self.view addSubview:self.tagsLabel];
     
     //TableView
+    self.tableView.dataSource = self;
+    self.tableView.allowsSelection = NO;
     [self.tableView setFrame:CGRectMake(0, [self.tagsLabel ftc_bottom], CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - [self.tagsLabel ftc_bottom])];
     self.tableView.backgroundColor = self.view.backgroundColor;
     self.tableView.separatorColor = self.tableView.backgroundColor;

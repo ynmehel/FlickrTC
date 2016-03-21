@@ -10,8 +10,10 @@
 #import "FTCFlow.h"
 #import "FTCPhotoListingCollectionViewCell.h"
 #import "FTCPhotoDetailViewController.h"
+#import "UIView+FTCAdditions.h"
 
 static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
+static CGFloat const kFTCListImageHorizontalOffset = 8.0;
 
 @interface FTCListViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -38,13 +40,12 @@ static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
     UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     [self.view addSubview:self.collectionView];
+    [self.view setBackgroundColor:[UIColor blackColor]];
     
     [self.collectionView registerClass:[FTCPhotoListingCollectionViewCell class] forCellWithReuseIdentifier:kFTCListReuseIdentifier];
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
     self.collectionView.frame = self.view.bounds;
-    
-    [self.view setBackgroundColor:[UIColor whiteColor]];
     [self.collectionView setBackgroundColor:self.view.backgroundColor];
     [self.flow fetchPartyPhotosWithCompletion:^(FTCSearchResponse *response, NSError *error) {
        
@@ -82,7 +83,7 @@ static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(150, 100);
+    return CGSizeMake([self.view ftc_width]/2 - kFTCListImageHorizontalOffset, 100);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

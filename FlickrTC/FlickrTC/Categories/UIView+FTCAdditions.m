@@ -20,4 +20,9 @@
     return CGRectGetWidth(self.frame);
 }
 
+- (CGFloat)ftc_height {
+    
+    return CGRectGetHeight(self.frame);
+}
+
 @end
