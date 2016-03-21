@@ -10,7 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 static NSString * const kFTCApiBaseUrl = @"https://api.flickr.com/services/rest/";
-static NSString * const kFTCApiKeyFlickrApiKey = @"44545d531e1563cac55b7d9ef330e4ae";
+static NSString * const kFTCApiKeyFlickrApiKey = @"bd0dc1bd9eae34fd28a4772e071cd4f8";
 static NSString * const kFTCApiKeyMethod = @"?method=%@";
 static NSString * const kFTCApiKeyHttpParamKey = @"&api_key=%@";
 static NSString * const kFTCApiMethodPhotoInfo = @"flickr.photos.getInfo";
