@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FTCListViewController.h"
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
 @interface AppDelegate ()
 
@@ -24,6 +25,8 @@
     self.window = [UIWindow new];
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
+    
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     
     return YES;
 }

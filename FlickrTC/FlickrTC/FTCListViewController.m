@@ -15,7 +15,7 @@
 static NSString * const kFTCListReuseIdentifier = @"com.ftc.reuseID";
 static CGFloat const kFTCListImageHorizontalOffset = 8.0;
 
-@interface FTCListViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface FTCListViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIAlertViewDelegate>
 
 @property (strong, nonatomic) FTCFlow *flow;
 @property (strong, nonatomic) UICollectionView *collectionView;
@@ -48,15 +48,22 @@ static CGFloat const kFTCListImageHorizontalOffset = 8.0;
     [self.collectionView setDelegate:self];
     self.collectionView.frame = self.view.bounds;
     [self.collectionView setBackgroundColor:self.view.backgroundColor];
+ 
+    [self fetchAndReloadPhotos];
+}
+
+- (void)fetchAndReloadPhotos {
+    
+    __weak typeof(self) weakSelf = self;
     [self.flow fetchPartyPhotosWithCompletion:^(FTCSearchResponse *response, NSError *error) {
-       
+        
         if (error) {
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:error.localizedDescription delegate:self cancelButtonTitle:NSLocalizedString(@"Ok", nil) otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:error.localizedDescription delegate:self cancelButtonTitle:NSLocalizedString(@"Retry", nil) otherButtonTitles:nil];
             [alert show];
             
         }
-        [self.collectionView reloadData];
+        [weakSelf.collectionView reloadData];
     }];
 }
 
@@ -95,6 +102,13 @@ static CGFloat const kFTCListImageHorizontalOffset = 8.0;
         [self.navigationController pushViewController:[[FTCPhotoDetailViewController alloc] initWithFlow:self.flow]
                                              animated:YES];
     }
+}
+
+#pragma mark - UIAlertView
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+    [self fetchAndReloadPhotos];
 }
 
 @end
