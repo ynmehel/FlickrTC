@@ -12,6 +12,7 @@ typedef void (^FTCApiManagerCompletion)(NSDictionary *data, NSError *error);
 
 @interface FTCApiManager : NSObject
 
+/// Fetches the method and appends tags & pages if provided
 + (void)fetchMethod:(NSString *)method
                tags:(NSArray<NSString *> *)tags
                page:(NSUInteger)page

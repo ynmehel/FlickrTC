@@ -13,11 +13,14 @@
 
 typedef void(^FTCFlowFetchPartyCompletion)(FTCSearchResponse *response, NSError *error);
 
+/// Acts as a middleware for APIManager and the viewControllers, carries the models and responses. Handles most of the logic
 @interface FTCFlow : NSObject
 
+/// Array of FTCPhotos, nil until a successful fetchPartyPhotos call
 @property (strong, nonatomic, readonly) NSMutableArray<FTCPhoto *> *photos;
 @property (strong, nonatomic) FTCPhoto *selectedPhoto;
 
+/// Fetches photos, tagged with "Party"
 - (void)fetchPartyPhotosWithCompletion:(FTCFlowFetchPartyCompletion)completion;
 
 @end

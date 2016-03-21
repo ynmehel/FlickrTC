@@ -34,6 +34,8 @@
 - (NSDictionary *)dictionaryRepresentation;
 - (NSURL *)urlForThumbnail;
 - (NSURL *)urlForZSizedImage;
+
+/// Returns an array of Key-Value pairs to be included on the details page
 - (NSArray<FTCKeyValuePair *> *)detailsToShow;
 
 @end

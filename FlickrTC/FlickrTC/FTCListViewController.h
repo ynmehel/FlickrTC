@@ -10,6 +10,5 @@
 
 @interface FTCListViewController : UIViewController
 
-
 @end
 

@@ -12,6 +12,7 @@
 
 @interface FTCPhotoDetailViewController : UIViewController
 
+/// Creates an instance of FTCPhotoDetailViewController with the given flow. Flow holds the photos and selected photo, nothing else is needed for the photo details
 - (instancetype)initWithFlow:(FTCFlow *)flow;
 
 @end
